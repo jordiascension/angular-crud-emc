@@ -41,4 +41,14 @@ export class AddPeliculaComponent implements OnInit{
         error: (e) => console.error(e)
       });
   }
+
+  newPelicula(): void {
+    this.submitted = false;
+    this.pelicula = {
+      id: 0,
+      nombre: '',
+      director: '',
+      clasificacion: ''
+    };
+  }
 }

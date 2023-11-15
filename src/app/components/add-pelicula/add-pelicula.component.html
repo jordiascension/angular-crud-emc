@@ -1,1 +1,46 @@
-<p>add-pelicula works!</p>
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            required
+            [(ngModel)]="pelicula.nombre"
+            name="nombre"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="director">Director</label>
+          <input
+            class="form-control"
+            id="director"
+            required
+            [(ngModel)]="pelicula.director"
+            name="director"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="clasificacion">Clasificación</label>
+            <input
+              class="form-control"
+              id="clasificacion"
+              required
+              [(ngModel)]="pelicula.clasificacion"
+              name="clasificiacion"
+            />
+        </div>
+  
+        <button (click)="savePelicula()" class="btn btn-success">Guardar</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Tutorial was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newPelicula()">Agregar</button>
+      </div>
+    </div>
+  </div>
