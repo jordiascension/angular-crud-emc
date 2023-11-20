@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "0c00d89e-0779-436a-91e1-e63f34014611",
+		"name": "AngularPeliculas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "617943"
+	},
+	"item": [
+		{
+			"name": "Peliculas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Domain}}/jordiascension/my-first-angular-app-emc/peliculas",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"jordiascension",
+						"my-first-angular-app-emc",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PeliculasById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Domain}}/my-first-angular-app-emc/peliculas/1",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"my-first-angular-app-emc",
+						"peliculas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PeliculasByNombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Domain}}/jordiascension/my-first-angular-app-emc/peliculas?nombre=El%20sexto%20sentido",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"jordiascension",
+						"my-first-angular-app-emc",
+						"peliculas"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "El%20sexto%20sentido"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Peliculas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"8\",\r\n    \"nombre\": \"Los juegos del hambre\",\r\n    \"director\": \"Francis Lawrence\",\r\n    \"clasificacion\": \"Fantasia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Domain}}/jordiascension/my-first-angular-app-emc/peliculas",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"jordiascension",
+						"my-first-angular-app-emc",
+						"peliculas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Peliculas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"nombre\": \"Los juegos del hambre\",\r\n    \"director\": \"Francis Lawrence\",\r\n    \"clasificacion\": \"Fantasia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Domain}}/jordiascension/my-first-angular-app-emc/peliculas/1",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"jordiascension",
+						"my-first-angular-app-emc",
+						"peliculas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Peliculas",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Domain}}/jordiascension/my-first-angular-app-emc/peliculas/1",
+					"host": [
+						"{{Domain}}"
+					],
+					"path": [
+						"jordiascension",
+						"my-first-angular-app-emc",
+						"peliculas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
