@@ -1,1 +1,87 @@
-<p>pelicula-details works!</p>
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentPelicula.id">
+      <h4>Tutorial</h4>
+      <div>
+        <label><strong>Nombre:</strong></label> {{ currentPelicula.nombre }}
+      </div>
+      <div>
+        <label><strong>Clasificacion:</strong></label>
+        {{ currentPelicula.clasificacion }}
+      </div>
+      <div>
+        <label><strong>Director:</strong></label>
+        {{ currentPelicula.director }}
+      </div>
+  
+      <a
+        class="badge badge-warning"
+        routerLink="/tutorials/{{ currentPelicula.id }}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentPelicula">
+      <br />
+      <p>Please click on a Película...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentPelicula.id" class="edit-form">
+      <h4>Tutorial</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentPelicula.nombre"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Clasificacion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentPelicula.clasificacion"
+            name="description"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Director:</strong></label>
+          {{ currentPelicula.director }}
+        </div>
+      </form>
+  <!--
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="currentPelicula.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+  -->
+      <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateTutorial()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentPelicula.id">
+      <br />
+      <p>Cannot access this Tutorial...</p>
+    </div>
+  </ng-template>

@@ -36,7 +36,7 @@ export class PeliculaService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Pelicula[]> {
-    return this.http.get<Pelicula[]>(`${baseUrl}?title=${title}`);
+  findByNombre(nombre: any): Observable<Pelicula[]> {
+    return this.http.get<Pelicula[]>(`${baseUrl}?nombre=${nombre}`);
   }
 }
