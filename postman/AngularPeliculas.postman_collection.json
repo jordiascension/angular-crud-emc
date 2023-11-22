@@ -57,11 +57,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{Domain}}/my-first-angular-app-emc/peliculas/1",
+					"raw": "{{Domain}}/jordiascension/my-first-angular-app-emc/peliculas/1",
 					"host": [
 						"{{Domain}}"
 					],
 					"path": [
+						"jordiascension",
 						"my-first-angular-app-emc",
 						"peliculas",
 						"1"
@@ -72,6 +73,19 @@
 		},
 		{
 			"name": "PeliculasByNombre",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -97,6 +111,19 @@
 		},
 		{
 			"name": "Peliculas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -125,6 +152,19 @@
 		},
 		{
 			"name": "Peliculas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -154,6 +194,19 @@
 		},
 		{
 			"name": "Peliculas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
 				"header": [],
